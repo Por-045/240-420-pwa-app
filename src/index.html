@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" content="utf-8"/>
+    <meta charset="utf-8" content="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#008000" />
-    <meta name="description" content="240-420 Work.">
-    <title>My hello world page</title>
+    <meta name="description" content="240-420 Work." />
+    <title>Time Counter</title>
     <link rel="stylesheet" type="text/css" href="hello-world.css" media="all" />
     <link rel="manifest" href="manifest.json" />
-    <link rel="apple-touch-icon" href="/icon/icon-128x128.png">
+    <link rel="apple-touch-icon" href="/icon/icon-128x128.png" />
   </head>
   <body>
-    <h1 class="vertical-container">Hello Member!</h1>
+    <p class="vertical-container">
+      <span
+        id="my_timer"
+        style="color: rgb(0, 0, 0); font-size: 1000%; font-weight: bold"
+      >
+        00:00:00
+      </span>
+    </p>
+    <div class="vertical-container">
+      <button id="control" onclick="changeState()">START</button>
+      <button id="reset" onclick="reset()">RESET</button></div
+    >
+    <script type=" text/javascript " src="timer.js"></script>
+    <h1 class="vertical-container">Member!</h1>
     <h2 class="vertical-container">นายสุทิวัส จารุสิริรังษี 6110110476</h2>
-    <h2 class="vertical-container">นายจิรทีปต์ จันทร์เขียว 6210110045 </h2>
-    <h2 class="vertical-container">นางสาวชลธิชา คำหวาน 6210110062 </h2>
-    <h2 class="vertical-container">นายกรชนก เอียดนุสรณ์ 6210110446 </h2>
+    <h2 class="vertical-container">นายจิรทีปต์ จันทร์เขียว 6210110045</h2>
+    <h2 class="vertical-container">นางสาวชลธิชา คำหวาน 6210110062</h2>
+    <h2 class="vertical-container">นายกรชนก เอียดนุสรณ์ 6210110446</h2>
     <!-- <p>Hello Jirateep</p>
     <p>Hello Chonticha</p> -->
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
