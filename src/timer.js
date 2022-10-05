@@ -17,7 +17,8 @@ function start_timer() {
       }
       if (min < 10) min = "0" + min;
       sec = 0;
-    } else {
+    } 
+    else {
         sec++;
       if (sec < 10) 
         sec = "0" + sec;
