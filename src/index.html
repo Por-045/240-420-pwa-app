@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#008000"/>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#008000" />
     <title>My hello world page</title>
-    <link rel="stylesheet" type="text/css" href="hello-world.css" media="all">
+    <link rel="stylesheet" type="text/css" href="hello-world.css" media="all" />
+    <link rel="manifest" href="manifest.json" />
   </head>
   <body>
     <h1 class="vertical-container">Hello World</h1>
-    <p>Hello Jirateep</p>
-    <p>Hello Chonticha</p>
+    <!-- <p>Hello Jirateep</p>
+    <p>Hello Chonticha</p> -->
     <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -21,17 +22,31 @@
         projectId: "my-pwa-app-a08c2",
         storageBucket: "my-pwa-app-a08c2.appspot.com",
         messagingSenderId: "916709297858",
-        appId: "1:916709297858:web:99f72c9973a1d935ccb55b"
+        appId: "1:916709297858:web:99f72c9973a1d935ccb55b",
       };
       firebase.initializeApp(config);
     </script>
-        <script>
-          if('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
-              .then(function() {
-                    console.log('Service Worker Registered');
-              });
-          }
-        </script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("/sw.js").then(function () {
+          console.log("Service Worker Registered");
+        });
+      }
+    </script>
+    <script>
+      const messaging = firebase.messaging();
+      messaging
+        .requestPermission()
+        .then(function () {
+          console.log("Notification permission granted.");
+          return messaging.getToken();
+        })
+        .then(function (token) {
+          console.log(token);
+        })
+        .catch(function (err) {
+          console.log("Unable to get permission to notify.", err);
+        });
+    </script>
   </body>
 </html>
