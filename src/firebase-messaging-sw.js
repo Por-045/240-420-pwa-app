@@ -7,6 +7,7 @@ databaseURL: "https://my-pwa-app-a08c2-default-rtdb.asia-southeast1.firebasedata
 projectId: "my-pwa-app-a08c2",
 storageBucket: "my-pwa-app-a08c2.appspot.com",
 messagingSenderId: "916709297858",
+// appId: "1:916709297858:web:99f72c9973a1d935ccb55b",
 };
 firebase.initializeApp(config);
 const messaging = firebase.messaging();
